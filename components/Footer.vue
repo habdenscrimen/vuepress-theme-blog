@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer v-if="renderFooter" class="footer">
     <div class="footer-left-wrap">
       <ul v-if="contact" class="contact">
         <li
@@ -82,6 +82,10 @@ export default {
       return (
         (this.$themeConfig.footer && this.$themeConfig.footer.copyright) || []
       )
+    },
+
+    renderFooter() {
+      return this.contact.length > 0 || this.copyright.length > 0
     },
   },
 

@@ -64,10 +64,12 @@
       </article>
     </div>
 
-    <component
-      :is="paginationComponent"
-      v-if="$pagination.length > 1 && paginationComponent"
-    ></component>
+    <div class="pagination-wrapper">
+      <component
+        :is="paginationComponent"
+        v-if="$pagination.length > 1 && paginationComponent"
+      ></component>
+    </div>
   </div>
 </template>
 
@@ -130,6 +132,12 @@ export default {
 </script>
 
 <style lang="stylus">
+@media (max-width: $MQMobile)
+  .pagination-wrapper
+    display flex
+    justify-content center
+    margin-top 15px
+
 .common-layout
   .content-wrapper
     padding-bottom 80px

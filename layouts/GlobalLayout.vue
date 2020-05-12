@@ -1,11 +1,8 @@
 <template>
   <div id="vuepress-theme-blog__global-layout">
     <Header />
-    <MobileHeader
-      :is-open="isMobileHeaderOpen"
-      @toggle-sidebar="isMobileHeaderOpen = !isMobileHeaderOpen"
-    />
-    <div class="content-wrapper" @click="isMobileHeaderOpen = false">
+    <MobileHeader />
+    <div class="content-wrapper">
       <DefaultGlobalLayout />
     </div>
     <Footer />
@@ -25,18 +22,6 @@ export default {
     MobileHeader,
     Footer,
   },
-
-  data() {
-    return {
-      isMobileHeaderOpen: false,
-    }
-  },
-
-  mounted() {
-    this.$router.afterEach(() => {
-      this.isMobileHeaderOpen = false
-    })
-  },
 }
 </script>
 
@@ -52,6 +37,6 @@ export default {
 
   @media (max-width: $MQMobile)
     &
-      padding 100px 15px 20px 15px
+      padding 100px 30px 20px 30px
       min-height calc(100vh - 20px - 60px - 100px)
 </style>

@@ -3,49 +3,27 @@
     <div class="mobile-header-bar">
       <div class="mobile-header-title">
         <NavLink link="/" class="mobile-home-link">{{ $site.title }} </NavLink>
-        <component
-          :is="isOpen ? 'XIcon' : 'MenuIcon'"
-          @click="$emit('toggle-sidebar')"
-        />
-      </div>
-      <div class="mobile-menu-wrapper" :class="{ open: isOpen }">
-        <hr class="menu-divider" />
-        <ul v-if="$themeConfig.nav" class="mobile-nav">
-          <li
-            v-for="item in $themeConfig.nav"
-            :key="item.text"
-            class="mobile-nav-item"
-          >
-            <NavLink :link="item.link">{{ item.text }}</NavLink>
-          </li>
-          <li class="mobile-nav-item">
-            <Feed />
-          </li>
-        </ul>
+        <SearchBox />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { MenuIcon, XIcon } from 'vue-feather-icons'
-import Feed from './Feed'
+import SearchBox from '@SearchBox'
+
 export default {
   components: {
-    MenuIcon,
-    XIcon,
-    Feed,
-  },
-  props: {
-    isOpen: {
-      type: Boolean,
-      required: true,
-    },
+    SearchBox,
   },
 }
 </script>
 
 <style lang="stylus">
+.search-box
+  input
+    border-radius 5px
+
 .mobile-header-bar
   font-family PT Serif, Serif
   z-index 12
@@ -63,7 +41,7 @@ export default {
     display flex
     align-items center
     justify-content space-between
-    padding 1.2em
+    padding 13px 1.2em
 
     .mobile-home-link
       text-decoration none
