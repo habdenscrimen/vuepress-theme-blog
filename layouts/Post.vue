@@ -18,13 +18,13 @@
       </header>
       <Content itemprop="articleBody" />
       <footer>
-        <div v-if="this.$themeConfig.telegramLink">
+        <div v-if="telegramLink">
           <br />
           <hr />
           <br />
           <div>
             <span>
-              <a :href="this.$themeConfig.telegramLink">Telegram канал</a>
+              <a :href="telegramLink">Telegram канал</a>
               <span>с уведомлениями о новых постах.</span>
             </span>
           </div>
@@ -49,6 +49,12 @@ export default {
     PostMeta,
     Comment,
     // Newsletter: () => import('@theme/components/Newsletter.vue'),
+  },
+
+  computed: {
+    telegramLink() {
+      return this.$themeConfig.telegramLink
+    },
   },
 }
 </script>
