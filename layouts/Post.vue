@@ -18,8 +18,19 @@
       </header>
       <Content itemprop="articleBody" />
       <footer>
-        <Newsletter v-if="$service.email.enabled" />
-        <hr />
+        <div v-if="this.$themeConfig.telegramLink">
+          <br />
+          <hr />
+          <br />
+          <div>
+            <span>
+              <a :href="this.$themeConfig.telegramLink">Telegram канал</a>
+              <span>с уведомлениями о новых постах.</span>
+            </span>
+          </div>
+        </div>
+        <!-- <Newsletter v-if="$service.email.enabled" />
+        <hr /> -->
         <Comment />
       </footer>
     </article>
@@ -37,7 +48,7 @@ export default {
     Toc,
     PostMeta,
     Comment,
-    Newsletter: () => import('@theme/components/Newsletter.vue'),
+    // Newsletter: () => import('@theme/components/Newsletter.vue'),
   },
 }
 </script>
