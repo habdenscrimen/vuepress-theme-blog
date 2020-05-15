@@ -72,7 +72,8 @@ export default {
 
     a
       color $darkTextColor
-      font-weight bold
+      // font-weight bold
+      font-weight 500
       font-family PT Serif, Serif
       text-decoration none
 
