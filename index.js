@@ -2,7 +2,7 @@ const removeMd = require('remove-markdown')
 const path = require('path')
 const pick = require('lodash/pick')
 
-module.exports = themeConfig => {
+module.exports = (themeConfig) => {
   /**
    * Default theme configuration
    */
@@ -19,9 +19,7 @@ module.exports = themeConfig => {
     ],
     summary: themeConfig.summary === undefined ? true : themeConfig.summary,
     summaryLength:
-      typeof themeConfig.summaryLength === 'number'
-        ? themeConfig.summaryLength
-        : 200,
+      typeof themeConfig.summaryLength === 'number' ? themeConfig.summaryLength : 200,
     pwa: !!themeConfig.pwa,
   })
 
@@ -51,12 +49,7 @@ module.exports = themeConfig => {
   let resolvedFeedOptions
   const isFeedEnabled = themeConfig.feed && themeConfig.feed.canonical_base
   if (isFeedEnabled) {
-    const {
-      rss = true,
-      atom = false,
-      json = false,
-      ...feedOptions
-    } = themeConfig.feed
+    const { rss = true, atom = false, json = false, ...feedOptions } = themeConfig.feed
     resolvedFeedOptions = Object.assign({}, feedOptions, {
       feeds: {
         rss2: { enable: rss },
@@ -72,7 +65,6 @@ module.exports = themeConfig => {
     'globalPagination',
     'sitemap',
     'comment',
-    'newsletter',
   ]
   const themeConfigPluginOptions = {
     ...pick(themeConfig, properties),

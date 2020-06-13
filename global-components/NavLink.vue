@@ -11,13 +11,9 @@
     v-else
     :href="normalizedlink"
     class="nav-link external"
-    :target="
-      isMailto(normalizedlink) || isTel(normalizedlink) ? null : '_blank'
-    "
+    :target="isMailto(normalizedlink) || isTel(normalizedlink) ? null : '_blank'"
     :rel="
-      isMailto(normalizedlink) || isTel(normalizedlink)
-        ? null
-        : 'noopener noreferrer'
+      isMailto(normalizedlink) || isTel(normalizedlink) ? null : 'noopener noreferrer'
     "
   >
     <slot />
@@ -42,7 +38,7 @@ export default {
     exact() {
       if (this.$site.locales) {
         return Object.keys(this.$site.locales).some(
-          rootLink => rootLink === this.normalizedlink
+          (rootLink) => rootLink === this.normalizedlink
         )
       }
       return this.normalizedlink === '/'

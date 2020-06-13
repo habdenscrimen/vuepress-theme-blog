@@ -44,11 +44,9 @@ export default {
 
       this._stickerScroll = () => {
         const rect = this.$el.getBoundingClientRect()
-        const scrollTop =
-          document.body.scrollTop + document.documentElement.scrollTop
+        const scrollTop = document.body.scrollTop + document.documentElement.scrollTop
         this.needFloat =
-          document.body.offsetHeight - scrollTop - rect.height <
-          stickElement.offsetHeight
+          document.body.offsetHeight - scrollTop - rect.height < stickElement.offsetHeight
         this.stickBottom = stickElement.offsetHeight
       }
 

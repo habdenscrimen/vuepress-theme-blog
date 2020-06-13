@@ -29,8 +29,6 @@
             </span>
           </div>
         </div>
-        <!-- <Newsletter v-if="$service.email.enabled" />
-        <hr /> -->
         <Comment />
       </footer>
     </article>
@@ -48,7 +46,6 @@ export default {
     Toc,
     PostMeta,
     Comment,
-    // Newsletter: () => import('@theme/components/Newsletter.vue'),
   },
 
   computed: {

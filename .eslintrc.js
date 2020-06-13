@@ -2,18 +2,14 @@ module.exports = {
   root: true,
 
   env: {
-    "node": true,
-    "jest": true
+    node: true,
+    jest: true,
   },
 
-  extends: [
-    'plugin:vue/recommended',
-    'plugin:prettier/recommended',
-    "prettier/vue",
-  ],
+  extends: ['plugin:vue/recommended', 'plugin:prettier/recommended', 'prettier/vue'],
 
   parserOptions: {
-    parser: 'babel-eslint' // Support dynamic import
+    parser: 'babel-eslint', // Support dynamic import
   },
 
   rules: {
@@ -23,14 +19,15 @@ module.exports = {
       'error',
       {
         extensions: ['js', 'vue'],
-        shouldMatchCase: false
-      }
+        shouldMatchCase: false,
+      },
     ],
 
     'vue/prop-name-casing': 0,
 
-    'vue/require-default-prop': 0
+    'vue/require-default-prop': 0,
+    'vue/require-prop-types': 0,
+
+    'no-unused-vars': 'error',
   },
-
-
 }

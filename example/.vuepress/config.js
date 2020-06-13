@@ -70,8 +70,8 @@ module.exports = {
           link: '/',
         },
         {
-          type:'music',
-          link:'/'
+          type: 'music',
+          link: '/',
         },
         {
           type: 'phone',
@@ -82,8 +82,8 @@ module.exports = {
           link: 'https://twitter.com/vuepressjs',
         },
         {
-          type:'video',
-          link:'/'
+          type: 'video',
+          link: '/',
         },
         {
           type: 'web',
@@ -91,8 +91,8 @@ module.exports = {
         },
         {
           type: 'youtube',
-          link: '/'
-        }
+          link: '/',
+        },
       ],
       copyright: [
         {
@@ -153,7 +153,7 @@ module.exports = {
      * Ref: https://vuepress-theme-blog.ulivz.com/config/#sitemap
      */
     sitemap: {
-      hostname: 'https://example.vuepress-theme-blog.ulivz.com/'
+      hostname: 'https://example.vuepress-theme-blog.ulivz.com/',
     },
     /**
      * Ref: https://vuepress-theme-blog.ulivz.com/config/#comment
@@ -161,12 +161,6 @@ module.exports = {
     comment: {
       service: 'disqus',
       shortname: 'vuepress-plugin-blog',
-    },
-    /**
-     * Ref: https://vuepress-theme-blog.ulivz.com/config/#newsletter
-     */
-    newsletter: {
-      endpoint: 'https://billyyyyy3320.us4.list-manage.com/subscribe/post?u=4905113ee00d8210c2004e038&amp;id=bd18d40138'
     },
     /**
      * Ref: https://vuepress-theme-blog.ulivz.com/config/#feed
@@ -202,6 +196,6 @@ module.exports = {
     /**
      * Ref: https://vuepress-theme-blog.ulivz.com/config/#smoothscroll
      */
-    smoothScroll: true
+    smoothScroll: true,
   },
 }

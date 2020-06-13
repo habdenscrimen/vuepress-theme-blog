@@ -2,11 +2,7 @@
   <footer v-if="renderFooter" class="footer">
     <div class="footer-left-wrap">
       <ul v-if="contact" class="contact">
-        <li
-          v-for="item in contact"
-          :key="item.iconComponent"
-          class="contact-item"
-        >
+        <li v-for="item in contact" :key="item.iconComponent" class="contact-item">
           <NavLink :link="item.link">
             <component :is="item.iconComponent"></component>
             {{ item.text }}
@@ -65,10 +61,7 @@ export default {
 
   computed: {
     contact() {
-      return (
-        (this.$themeConfig.footer && this.$themeConfig.footer.contact) ||
-        []
-      )
+      return ((this.$themeConfig.footer && this.$themeConfig.footer.contact) || [])
         .map(({ type, link }) => {
           return {
             iconComponent: this.getIconComponentName(type),
@@ -79,9 +72,7 @@ export default {
     },
 
     copyright() {
-      return (
-        (this.$themeConfig.footer && this.$themeConfig.footer.copyright) || []
-      )
+      return (this.$themeConfig.footer && this.$themeConfig.footer.copyright) || []
     },
 
     renderFooter() {

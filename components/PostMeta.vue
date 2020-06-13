@@ -47,9 +47,7 @@ export default {
   },
   computed: {
     resolvedDate() {
-      return dayjs(this.date).format(
-        this.$themeConfig.dateFormat || 'ddd MMM DD YYYY'
-      )
+      return dayjs(this.date).format(this.$themeConfig.dateFormat || 'ddd MMM DD YYYY')
     },
     resolvedTags() {
       if (!this.tags || Array.isArray(this.tags)) return this.tags

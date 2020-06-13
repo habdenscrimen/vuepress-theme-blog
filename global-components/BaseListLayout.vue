@@ -37,11 +37,7 @@
 
           <div v-if="page.frontmatter.date" class="ui-post-meta ui-post-date">
             <ClockIcon />
-            <time
-              pubdate
-              itemprop="datePublished"
-              :datetime="page.frontmatter.date"
-            >
+            <time pubdate itemprop="datePublished" :datetime="page.frontmatter.date">
               {{ resolvePostDate(page.frontmatter.date) }}
             </time>
           </div>
@@ -79,10 +75,7 @@
 import Vue from 'vue'
 import dayjs from 'dayjs'
 import { NavigationIcon, ClockIcon, TagIcon } from 'vue-feather-icons'
-import {
-  Pagination,
-  SimplePagination,
-} from '@vuepress/plugin-blog/lib/client/components'
+import { Pagination, SimplePagination } from '@vuepress/plugin-blog/lib/client/components'
 
 export default {
   components: { NavigationIcon, ClockIcon, TagIcon },
@@ -118,9 +111,7 @@ export default {
     },
 
     resolvePostDate(date) {
-      return dayjs(date).format(
-        this.$themeConfig.dateFormat || 'ddd MMM DD YYYY'
-      )
+      return dayjs(date).format(this.$themeConfig.dateFormat || 'ddd MMM DD YYYY')
     },
 
     resolvePostTags(tags) {

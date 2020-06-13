@@ -259,21 +259,6 @@ Further configuration, please visit:
 - [vuepress-plugin-disqus-comment](https://vuepress-plugin-disqus.netlify.com/#usage)
 - [vuepress-plugin-vssue](https://vssue.js.org/guide/vuepress.html#usage)
 
-## newsletter
-
-- Type: `object`
-- Default: `undefined`
-
-Mailchimp is our default newsletter service. The only required property to enable newsletter is `endpoint`:
-
-```JavaScript
-{
-  endpoint: 'https://billyyyyy3320.us4.list-manage.com/subscribe/post?u=4905113ee00d8210c2004e038&amp;id=bd18d40138'
-}
-```
-
-Please head [vuepress-plugin-mailchimp](https://vuepress-plugin-mailchimp.billyyyyy3320.com/#config) to see how to get your `endpoint`.
-
 ## feed
 
 - Type: `object`
